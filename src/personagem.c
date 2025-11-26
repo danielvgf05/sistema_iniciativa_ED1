@@ -23,7 +23,7 @@ typedef struct personagem {
  *  parametros, faltava mandar limpar a memoria caso desse errado
  */
 Personagem* criarPersonagem(char nome[50], int nivel, int idDado) {
-	Personagem* novo_personagem = malloc((Personagem*) sizeof(Personagem));
+	Personagem* novo_personagem = (Personagem*) malloc(sizeof(Personagem));
 	if(novo_personagem == NULL) {
 		return NULL;
 	}
