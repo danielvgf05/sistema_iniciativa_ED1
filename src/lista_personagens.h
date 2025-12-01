@@ -3,8 +3,17 @@
 #include "personagem.h"
 
 
-typedef struct elemento Elemento;
-typedef struct listapersonagens ListaPersonagens;
+typedef struct elemento {
+    Personagem* personagem;
+    struct elemento* prox;
+    struct elemento* prev;
+} Elemento;
+
+typedef struct listapersonagens {
+    Elemento* primeiro;
+    Elemento* ultimo;
+    int quant_elementos;
+} ListaPersonagens;
 
 ListaPersonagens* criarLista();
 void destruirLista(ListaPersonagens* l);
